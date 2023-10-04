@@ -34,28 +34,85 @@ namespace HelloDungeon
             return b;            
         }
 
-        void FizzBuzz()
+        void FizzBuzz(int num)
         {
-            if()
+            for (int i = 1; i <= num; i++)
             {
-                Console.WriteLine("FizzBuzz");
+                if (i % 3 == 0 && i % 5 == 0)
+                {
+                    Console.WriteLine("FizzBuzz");
+                }
+                else if (i % 3 == 0)
+                {
+                    Console.WriteLine("Fizz");
+                }
+                else if (i % 5 == 0)
+                {
+                    Console.WriteLine("Buzz");
+                }
+                else
+                {
+                    Console.WriteLine(i);
+                }
             }
-            else if()
+        }
+
+        string GetInput(string prompt, string option1, string option2)
+        {
+            string playerInput = "";
+
+            while (playerInput != "1" && playerInput != "2")
             {
-                Console.WriteLine("Fizz");
+                Console.Clear();
+                Console.WriteLine(prompt);
+
+                Console.WriteLine("1." + option1);
+                Console.WriteLine("2." + option2);
+
+                Console.Write("> ");
+                playerInput = Console.ReadLine();
+
+                if (playerInput != "1" && playerInput != "2")
+                {
+                    Console.Clear();
+                    Console.WriteLine("Invalid Input");
+                    Console.WriteLine("Press any key to continue");
+                    Console.ReadKey(true);
+                }
             }
-            else if()
+            return playerInput;
+        }
+
+        void AddingArray(int[] numbers)
+        {
+            int sum = 0;
+
+            for (int i = 0; i < numbers.Length; i++)
             {
-                Console.WriteLine("Buzz");
+                sum += numbers[i];
             }
-            else if()
+            Console.WriteLine(sum);
+        }
+
+        void ReverseArray(int[] numbers)
+        {
+            for (int i = numbers.Length - 1; i >= 0; i--)
             {
-                Console.WriteLine(i);
+                Console.WriteLine(numbers[i]);
             }
+            
         }
 
         public void Run()
         {
+            int[] numbers = new int[3] { 4, 6, 8 };
+            ReverseArray(numbers);
+
+            //int[] numbers = new int[3] { 4, 6, 8 };
+            //AddingArray(numbers);
+
+            //FizzBuzz(15);
+
             //int num = GetSmallerNumber(45, 47);
             //Console.WriteLine(num);
 
@@ -69,7 +126,7 @@ namespace HelloDungeon
 
             int currentScene;
             float damage;
-            string Word;
+            string word;
             bool gameOver;
             char playerChoice;
             double time;
@@ -99,7 +156,7 @@ namespace HelloDungeon
 
             //if(playerHealth == 0)
             //{
-                //Console.WriteLine("Game Over");
+            //Console.WriteLine("Game Over");
             //}
 
             //string playerInput = "";
@@ -110,37 +167,37 @@ namespace HelloDungeon
 
             //if (playerInput == "Toast")
             //{
-                //Console.WriteLine("egg");
+            //Console.WriteLine("egg");
             //}
 
             //playerHealth = 100;
             //Console.WriteLine("An old man approaches you with a bottle of strange liquid." +
-                //"He offers you a sip. Do you accept?");
+            //"He offers you a sip. Do you accept?");
 
             //if (playerInput == "yes")
             //{
-                //Console.WriteLine("You died");
+            //Console.WriteLine("You died");
             //}
             //else if (playerInput == "no")
             //{
-                //Console.WriteLine("You died twice");
+            //Console.WriteLine("You died twice");
             //}
 
             //if (playerHealth >= 90)
             //{
-                //Console.WriteLine("Health Status: Great!");
+            //Console.WriteLine("Health Status: Great!");
             //}
             //else if (playerHealth >= 50)
             //{
-                //Console.WriteLine("Health Status: Wounded!");
+            //Console.WriteLine("Health Status: Wounded!");
             //}
             //else if (playerHealth >= 10)
             //{
-                //Console.WriteLine("Health Status: Danger!");
+            //Console.WriteLine("Health Status: Danger!");
             //}
             //else if (playerHealth == 0)
             //{
-                //Console.WriteLine("Health Status: You are dead. Great!");
+            //Console.WriteLine("Health Status: You are dead. Great!");
             //}
 
             //Console.WriteLine("Please input the word Pancakes");
@@ -149,58 +206,44 @@ namespace HelloDungeon
 
             //if (playerInput == "Pancakes")
             //{
-                //Console.WriteLine("Bacon");
+            //Console.WriteLine("Bacon");
             //}
 
             //bool playerHasRedKey = false;
             //bool playerHasGreenKey = true;
 
-            //f(playerHasRedKey || playerHasGreenKey)
+            //(playerHasRedKey || playerHasGreenKey)
             //{
-                //Console.WriteLine("The door will open.");
+            //Console.WriteLine("The door will open.");
             //}
 
             //gameOver = true;
-            
+
             //if (gameOver || playerHealth <= 0)
             //{
-                //onsole.WriteLine("Game Over.");
+            //Console.WriteLine("Game Over.");
             //}            
 
             //for(int i = 0; i <= 10; i += 2)
             //{                
-                //Console.WriteLine(i);
+            //Console.WriteLine(i);
             //}
 
+            //GetInput("Pick Your Class", "Knight", "Warlock");
+            
+            //int[] numbers = new int[3] { 2, 3, 4};
 
-            //while (playerInput != "1" && playerInput != "2")
+            //numbers[0] = 6;
+
+            //int firstNumber = numbers[0];
+
+            //Console.WriteLine(numbers[0]);
+
+            //for(int i = 0; i < numbers.Length; i++)
             //{
-                //Console.WriteLine("Pick your class.");
-
-                //Console.WriteLine("1. Knight");
-                //Console.WriteLine("2. Warlock");
-                //Console.Write("> ");
-
-                //playerInput = Console.ReadLine();
-
-                //if (playerInput == "1")
-                //{
-                    //Console.WriteLine("You've choosen: Knight");
-                //}
-                //else if (playerInput == "2")
-                //{
-                    //Console.WriteLine("You've choosen: Warlock");
-                //}
-                //else
-                //{
-                    //Console.WriteLine("Invalid Input");
-                    //Console.WriteLine("Press any key to continue");
-                    //Console.ReadKey(true);
-                    //Console.Clear();
-                    
-                //}
-                
+                //Console.WriteLine(numbers[i]);
             //}
         }
+   
     }
 }
